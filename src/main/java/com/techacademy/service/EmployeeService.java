@@ -64,10 +64,9 @@ public class EmployeeService {
                 return result;
             }
         }
-        employee.setDeleteFlg(false);
 
         LocalDateTime now = LocalDateTime.now();
-        employee.setCreatedAt(now);
+        employee.setCreatedAt(findByCode(employee.getCode()).getCreatedAt());
         employee.setUpdatedAt(now);
 
         employeeRepository.save(employee);
