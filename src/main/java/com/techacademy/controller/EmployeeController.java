@@ -113,7 +113,7 @@ public class EmployeeController {
         return "redirect:/employees";
     }
 
-    // 従業員新規登録画面
+    // 従業員更新画面
     @GetMapping(value = "/update/{code}/")
     public String change(@PathVariable String code, Model model, Employee employee) {
         if(employee.getName() == null) {
